@@ -2,7 +2,6 @@ import android.support.v4.util.Pair;
 import android.test.AndroidTestCase;
 import android.util.Log;
 import com.udacity.gradle.builditbigger.EndpointsAsyncTask;
-import udacity.com.joketeller.JokeTeller;
 
 public class Testing extends AndroidTestCase {
 
@@ -14,7 +13,6 @@ public class Testing extends AndroidTestCase {
         // Testing that Async task successfully retrieves a non-empty string
         Log.v("NonEmptyStringTest", "Running NonEmptyStringTest test");
         String result = null;
-        JokeTeller joke = new JokeTeller();
         EndpointsAsyncTask endpointsAsyncTask = new EndpointsAsyncTask(getContext(),null);
         endpointsAsyncTask.execute(new Pair<>(getContext(), "Amir"));
         try {
