@@ -2,7 +2,7 @@ import android.support.v4.util.Pair;
 import android.test.AndroidTestCase;
 import android.util.Log;
 import com.udacity.gradle.builditbigger.EndpointsAsyncTask;
-import com.udacity.gradle.javajoke.JokeTeller;
+import udacity.com.joketeller.JokeTeller;
 
 public class Testing extends AndroidTestCase {
 
@@ -15,8 +15,8 @@ public class Testing extends AndroidTestCase {
         Log.v("NonEmptyStringTest", "Running NonEmptyStringTest test");
         String result = null;
         JokeTeller joke = new JokeTeller();
-        EndpointsAsyncTask endpointsAsyncTask = new EndpointsAsyncTask();
-        endpointsAsyncTask.execute(new Pair<>(getContext(), joke.getRandomJoke()));
+        EndpointsAsyncTask endpointsAsyncTask = new EndpointsAsyncTask(getContext(),null);
+        endpointsAsyncTask.execute(new Pair<>(getContext(), "Amir"));
         try {
             result = endpointsAsyncTask.get();
             Log.d(LOG_TAG, "Retrieved a non-empty string successfully: " + result);

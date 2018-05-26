@@ -8,7 +8,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
-import com.udacity.gradle.javajoke.JokeTeller;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -47,9 +46,8 @@ public class MainActivity extends AppCompatActivity {
     @SuppressWarnings("unchecked")
     public void launchLibraryActivity(View view) {
 
-        ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressbar);
-        JokeTeller joke = new JokeTeller();
-        new EndpointsAsyncTask(this,progressBar).execute(new Pair<Context, String>(this, joke.getRandomJoke()));
+        ProgressBar progressBar = findViewById(R.id.progressbar);
+        new EndpointsAsyncTask(this,progressBar).execute(new Pair<Context, String>(this, "Amir"));
 
     }
 }
