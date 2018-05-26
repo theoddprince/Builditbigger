@@ -20,3 +20,16 @@ allprojects {
         google()
     }
 }
+
+// This is an optional task
+// To tie it all together, create a Gradle task that:
+// 1) Launches the GCE local development server
+// 2) Runs all tests
+// 3) Shuts the server down again
+task wrapperTask{
+    dependsOn = [":backend:appengineStart",":app:connectedAndroidTest",':backend:appengineStop']
+    doLast {
+        println 'wrapperTask completed'
+    }
+}
+
