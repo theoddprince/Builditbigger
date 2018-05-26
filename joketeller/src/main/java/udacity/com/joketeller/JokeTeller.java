@@ -4,10 +4,6 @@ import java.util.Random;
 
 public class JokeTeller {
 
-    public String[] getJokes() {
-        return jokes;
-    }
-
     public String getRandomJoke() {
         return jokes[random.nextInt(jokes.length)];
     }
